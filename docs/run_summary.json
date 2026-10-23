@@ -1,0 +1,419 @@
+{
+  "timings_s": {
+    "simulate": 2.2,
+    "publish_phase1": 80.7,
+    "ingest_phase1": 96.0,
+    "replay_check": 10.1,
+    "publish_phase2": 81.7,
+    "ingest_phase2": 117.0,
+    "silver_daily_runs": 81.5,
+    "backfill": 85.6,
+    "gold": 43.1,
+    "experiment": 20.3,
+    "anomaly": 2.8,
+    "maintenance": 25.0
+  },
+  "ground_truth": {
+    "impressions": 9456489,
+    "clicks": 261427,
+    "unique_events": 9717916,
+    "duplicate_sends": 48840,
+    "late_events": 291078,
+    "clicks_beyond_window": 5902,
+    "clicks_lost_in_outage": 420,
+    "true_lift": 0.04,
+    "outage": {
+      "day": 15,
+      "placement": "today_tab",
+      "hours": [
+        9,
+        15
+      ]
+    },
+    "treated_users": 150122,
+    "users": 300000
+  },
+  "kafka": {
+    "phase1": {
+      "messages": 4644578,
+      "seconds": 72.4,
+      "per_second": 64172
+    },
+    "phase2": {
+      "messages": 5122178,
+      "seconds": 81.7,
+      "per_second": 62685
+    }
+  },
+  "exactly_once_replay": {
+    "replayed_batch": 4,
+    "batch_stats": [
+      {
+        "batch": 4,
+        "rows": 641386,
+        "inserted": 0,
+        "merge_seconds": 3.87,
+        "columns_added": []
+      }
+    ],
+    "rows_before": 4621248,
+    "rows_after": 4621248
+  },
+  "bronze": {
+    "messages_published": 9766756,
+    "rows": 9717916,
+    "distinct_event_ids": 9717916,
+    "expected_unique_events": 9717916,
+    "rows_with_device_class": 5092733,
+    "micro_batches": 11,
+    "columns_added": [
+      "device_class"
+    ],
+    "median_merge_s": 8.96
+  },
+  "backfill": {
+    "daily_runs": {
+      "impressions": 9399391,
+      "clicks": 252523
+    },
+    "after_backfill": {
+      "impressions": 9456489,
+      "clicks": 255525
+    },
+    "expected": {
+      "impressions": 9456489,
+      "attributed_clicks": 255525
+    },
+    "rerun_identical": true,
+    "per_day": {
+      "2026-09-01": {
+        "daily_run": [
+          447137,
+          11747
+        ],
+        "backfill": [
+          449845,
+          11890
+        ]
+      },
+      "2026-09-02": {
+        "daily_run": [
+          447625,
+          11893
+        ],
+        "backfill": [
+          450253,
+          12038
+        ]
+      },
+      "2026-09-03": {
+        "daily_run": [
+          448047,
+          11903
+        ],
+        "backfill": [
+          450734,
+          12035
+        ]
+      },
+      "2026-09-04": {
+        "daily_run": [
+          446578,
+          11783
+        ],
+        "backfill": [
+          449355,
+          11928
+        ]
+      },
+      "2026-09-05": {
+        "daily_run": [
+          447948,
+          11650
+        ],
+        "backfill": [
+          450734,
+          11797
+        ]
+      },
+      "2026-09-06": {
+        "daily_run": [
+          447763,
+          11955
+        ],
+        "backfill": [
+          450463,
+          12068
+        ]
+      },
+      "2026-09-07": {
+        "daily_run": [
+          448199,
+          11927
+        ],
+        "backfill": [
+          450935,
+          12068
+        ]
+      },
+      "2026-09-08": {
+        "daily_run": [
+          447386,
+          12280
+        ],
+        "backfill": [
+          450063,
+          12432
+        ]
+      },
+      "2026-09-09": {
+        "daily_run": [
+          446622,
+          12186
+        ],
+        "backfill": [
+          449409,
+          12352
+        ]
+      },
+      "2026-09-10": {
+        "daily_run": [
+          447090,
+          12054
+        ],
+        "backfill": [
+          449797,
+          12198
+        ]
+      },
+      "2026-09-11": {
+        "daily_run": [
+          448122,
+          12016
+        ],
+        "backfill": [
+          450808,
+          12140
+        ]
+      },
+      "2026-09-12": {
+        "daily_run": [
+          447481,
+          12100
+        ],
+        "backfill": [
+          450197,
+          12222
+        ]
+      },
+      "2026-09-13": {
+        "daily_run": [
+          446168,
+          12181
+        ],
+        "backfill": [
+          448834,
+          12320
+        ]
+      },
+      "2026-09-14": {
+        "daily_run": [
+          447164,
+          12209
+        ],
+        "backfill": [
+          449865,
+          12349
+        ]
+      },
+      "2026-09-15": {
+        "daily_run": [
+          447592,
+          11999
+        ],
+        "backfill": [
+          450313,
+          12145
+        ]
+      },
+      "2026-09-16": {
+        "daily_run": [
+          447820,
+          11870
+        ],
+        "backfill": [
+          450547,
+          12017
+        ]
+      },
+      "2026-09-17": {
+        "daily_run": [
+          447939,
+          12015
+        ],
+        "backfill": [
+          450683,
+          12166
+        ]
+      },
+      "2026-09-18": {
+        "daily_run": [
+          448166,
+          12187
+        ],
+        "backfill": [
+          450856,
+          12344
+        ]
+      },
+      "2026-09-19": {
+        "daily_run": [
+          448124,
+          12313
+        ],
+        "backfill": [
+          450838,
+          12454
+        ]
+      },
+      "2026-09-20": {
+        "daily_run": [
+          448374,
+          12069
+        ],
+        "backfill": [
+          451168,
+          12218
+        ]
+      },
+      "2026-09-21": {
+        "daily_run": [
+          448046,
+          12186
+        ],
+        "backfill": [
+          450792,
+          12344
+        ]
+      }
+    }
+  },
+  "privacy_report": {
+    "min_users": 50,
+    "rows": 33600,
+    "suppressed_rows": 15017,
+    "suppressed_impression_share": 0.0436
+  },
+  "experiment": {
+    "true_lift": 0.04,
+    "srm": {
+      "treatment_users": 149053,
+      "control_users": 148721,
+      "chi2": 0.3701599199392828,
+      "p_value": 0.5429171109808162
+    },
+    "ctr_delta_method": {
+      "ctr_treatment": 0.027557763287168222,
+      "ctr_control": 0.026912111851275913,
+      "relative_lift": 0.02399111000505516,
+      "ci": [
+        0.00933238681367385,
+        0.03864983319643647
+      ],
+      "p_value": 0.0013377163315386252,
+      "se": 0.007479077833576254
+    },
+    "ctr_cuped": {
+      "relative_lift": 0.02994381927257601,
+      "ci": [
+        0.0172444885162201,
+        0.04264315002893192
+      ],
+      "p_value": 3.8114166284407437e-06,
+      "theta": 0.40911223470253577,
+      "variance_reduction": 0.23164471008476062,
+      "mde_80pct_power": {
+        "without_cuped": 0.02069749154584841,
+        "with_cuped": 0.018142234448323802
+      }
+    },
+    "aa": {
+      "runs": 1000,
+      "alpha": 0.05,
+      "false_positive_rate": 0.059
+    }
+  },
+  "anomaly": {
+    "flagged": {
+      "product_page": [
+        [
+          17,
+          2,
+          4.6
+        ],
+        [
+          18,
+          2,
+          4.9
+        ]
+      ],
+      "today_tab": [
+        [
+          15,
+          9,
+          -6.6
+        ],
+        [
+          15,
+          10,
+          -6.4
+        ],
+        [
+          15,
+          11,
+          -6.7
+        ],
+        [
+          15,
+          12,
+          -6.2
+        ],
+        [
+          15,
+          13,
+          -6.8
+        ],
+        [
+          15,
+          14,
+          -7.1
+        ]
+      ]
+    },
+    "injected_hours": 6,
+    "flagged_hours": 8,
+    "true_positives": 6,
+    "precision": 0.75,
+    "recall": 1.0
+  },
+  "maintenance": {
+    "before": {
+      "data_files": 52,
+      "avg_file_mb": 6.16,
+      "query_s": 0.158
+    },
+    "compaction": {
+      "rewritten_files": 51,
+      "added_files": 21
+    },
+    "after": {
+      "data_files": 22,
+      "avg_file_mb": 14.57,
+      "query_s": 0.1
+    },
+    "snapshots": {
+      "snapshots_before": 13,
+      "snapshots_after": 3
+    }
+  }
+}

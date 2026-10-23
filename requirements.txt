@@ -1,0 +1,5 @@
+pyspark==4.0.1
+confluent-kafka==2.16.0
+numpy==2.5.4
+scipy==1.18.1
+pytest==9.1.1
