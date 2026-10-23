@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start Kafka
+        run: docker compose up -d
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - uses: actions/cache@v4
+        with:
+          path: ~/.ivy2.5.2
+          key: ivy-${{ hashFiles('adlake/spark.py') }}
+      - run: pip install -r requirements.txt
+      - name: Wait for Kafka
+        run: |
+          for i in $(seq 1 30); do
+            docker compose exec -T kafka /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list && exit 0
+            sleep 2
+          done
+          exit 1
+      - name: Tests (unit, Iceberg, and Kafka end to end)
+        env:
+          REQUIRE_KAFKA: '1'
+        run: python -m pytest -rs
